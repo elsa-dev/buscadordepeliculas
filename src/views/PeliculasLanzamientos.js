@@ -1,9 +1,18 @@
+import PeliculasSection from '../components/PeliculasSection'
+import useFetch from '../hooks/useFetch'
 
+import { URL_PELICULAS_LANZAMIENTOS } from '../utils/variables'
 
 const PeliculasLanzamientos = () => {
 
+    const peliculasLanzamiento = useFetch(URL_PELICULAS_LANZAMIENTOS)
+
     return(
-        <h1>Ultimos Lanzamientos</h1>
+        <PeliculasSection 
+        peliculas={peliculasLanzamiento}
+        titulo="Ultimos Lanzamientos"
+        
+        />
     )
 }
 

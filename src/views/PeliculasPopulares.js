@@ -3,7 +3,7 @@
 const PeliculasPopulares = () => {
 
     return(
-        <h1>Peliculas Populares</h1>
+        <h1>Peliculas Popu</h1>
     )
 }
 
