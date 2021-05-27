@@ -17,6 +17,11 @@ const Nav = () => {
                <li>
                     <Link to='/peliculas-populares'>Populares</Link>
                </li>
+
+               <li>
+                    <Link to='/peliculas-puntuadas'>Puntuadas sacar</Link>
+               </li>
+
                <li>
                     <Link to='/busqueda'>Buscar</Link>
                </li>
