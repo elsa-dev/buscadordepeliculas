@@ -15,12 +15,26 @@ const DetallePeliculas = () => {
 
     },[])
 
-console.log(detalle)
+    console.log(detalle)
+
+console.log(detalle.genres)
+
+console.log(detalle.genres[0].name)
 
     return(
         <>
-        <p>{detalle.overview}</p>
-        {/* <h4>{detalle.genres[0].name}</h4> */}
+        
+        {/* <div>
+           
+            {detalle.genres.map( (genre) => 
+                <ul>
+                    <li>{genre}</li>
+                </ul>
+            )}
+        </div> */}
+        <h4>
+            {detalle.overview}
+        </h4>
         </>
     )
 }
@@ -30,3 +44,6 @@ export default DetallePeliculas;
 
 ////video youtube
 //fetch(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`)
+
+// marcas 
+//npm i @fortawesome/free-brands-svg-icons
