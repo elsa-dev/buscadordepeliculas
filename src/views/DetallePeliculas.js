@@ -1,49 +1,59 @@
-import { useState, useEffect } from 'react'
-import { useParams} from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const DetallePeliculas = () => {
+  const [detalle, setDetalle] = useState({});
+  const [video, setVideo] = useState({});
 
-    const [detalle, setDetalle] = useState({})
+  const params = useParams();
 
-    const params = useParams()
-    console.log(params)
-
-    useEffect( () => {
-        fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`)
-        .then(res => res.json())
-        .then(data => setDetalle(data))
-
-    },[])
-
-    console.log(detalle)
-
-console.log(detalle.genres)
-
-console.log(detalle.genres[0].name)
-
-    return(
-        <>
-        
-        {/* <div>
-           
-            {detalle.genres.map( (genre) => 
-                <ul>
-                    <li>{genre}</li>
-                </ul>
-            )}
-        </div> */}
-        <h4>
-            {detalle.overview}
-        </h4>
-        </>
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
     )
-}
+      .then((res) => res.json())
+      .then((data) => setDetalle(data));
+
+    fetch(
+      `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
+    )
+      .then((res) => res.json())
+      .then((data) => setVideo(data));
+  }, []);
+
+  console.log(detalle);
+
+  return (
+    <>
+      <img src={`https://image.tmdb.org/t/p/w500${detalle.backdrop_path}`} />
+      <h1>{detalle.original_title}</h1>
+      <div>{detalle.release_date}</div>
+      <div>
+        Generos
+        {detalle.genres &&
+          detalle.genres.map((genre) => (
+            <ul>
+              <li>{genre.name}</li>
+            </ul>
+          ))}
+      </div>
+
+      <h4>
+        General
+        {detalle.overview}
+      </h4>
+
+      <div>
+        {video.results &&
+          video.results.map((video) => (
+            <iframe src={`https://www.youtube.com/embed/${video.key}`} />
+          ))}
+      </div>
+    </>
+  );
+};
 
 export default DetallePeliculas;
 
-
-////video youtube
-//fetch(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`)
-
-// marcas 
+// marcas
 //npm i @fortawesome/free-brands-svg-icons

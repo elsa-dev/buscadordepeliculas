@@ -1,12 +1,12 @@
-
+import Box from "@material-ui/core/Box";
 
 const Footer = () =>{
 
     return(
-        <>
-        <p>loguito</p>
-        <p>Movie App</p>
-        </>
+        <Box bgcolor="primary.main" color="primary.contrastText" p={2}>
+          Movie App
+        </Box>
+        
     )
 }
 
