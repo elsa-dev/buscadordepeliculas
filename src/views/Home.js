@@ -9,7 +9,7 @@ import { URL_PELICULAS_LANZAMIENTOS, URL_PELICULAS_POPULARES, URL_PELICULAS_PUNT
 
 const Home = () => {
 
-    const peliculasLanzamiento = useFetch(URL_PELICULAS_LANZAMIENTOS)
+    
 
     const peliculasPopulares = useFetch(URL_PELICULAS_POPULARES)
 
@@ -22,10 +22,10 @@ const Home = () => {
             <Carusel>      
             </Carusel>
 
-            <PeliculasSection 
+            {/* <PeliculasSection 
         peliculas={peliculasLanzamiento}
-        titulo="Ultimos Lanzamientos carusel"
-        /> 
+        titulo="Ultimos Lanzamientos carusel" 
+        /> */}
        
         <PeliculasSection 
         peliculas={peliculasPopulares}

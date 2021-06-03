@@ -7,6 +7,8 @@ const PeliculasPopulares = () => {
 
     const peliculasPopulares = useFetch(URL_PELICULAS_POPULARES)
 
+    
+
     return(
         <PeliculasSection 
         peliculas={peliculasPopulares}

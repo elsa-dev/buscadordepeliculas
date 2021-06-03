@@ -13,8 +13,8 @@ const useFetch = (url) => {
 
     }, [] )
     
-    console.log(peliculas)
-    console.log(paginado)
+    // console.log(peliculas)
+    // console.log(paginado)
 
     return peliculas
 }
