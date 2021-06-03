@@ -3,6 +3,7 @@ import useFetch from '../hooks/useFetch'
 
 //cambiar a lista y carrusel
 import PeliculasSection from '../components/PeliculasSection'
+import Carusel from '../components/Carusel'
 
 import { URL_PELICULAS_LANZAMIENTOS, URL_PELICULAS_POPULARES, URL_PELICULAS_PUNTUADAS } from '../utils/variables'
 
@@ -16,8 +17,11 @@ const Home = () => {
 
     return(
 
-        //carrusel
+        
         <div>
+            <Carusel>      
+            </Carusel>
+
             <PeliculasSection 
         peliculas={peliculasLanzamiento}
         titulo="Ultimos Lanzamientos carusel"
