@@ -1,46 +1,46 @@
+import useFetch from "../hooks/useFetch";
 
-import useFetch from '../hooks/useFetch'
+import Carusel from "../components/Carusel";
+import ListaPeliculas from "../components/ListaPeliculas";
 
-//cambiar a lista y carrusel
-import PeliculasSection from '../components/PeliculasSection'
-import Carusel from '../components/Carusel'
+import { Grid } from '@material-ui/core';
 
-import { URL_PELICULAS_LANZAMIENTOS, URL_PELICULAS_POPULARES, URL_PELICULAS_PUNTUADAS } from '../utils/variables'
+import {
+  URL_PELICULAS_POPULARES,
+  URL_PELICULAS_PUNTUADAS,
+} from "../utils/variables";
+
+
 
 const Home = () => {
+  const peliculasPopulares = useFetch(URL_PELICULAS_POPULARES);
 
-    
+  const peliculasPuntuadas = useFetch(URL_PELICULAS_PUNTUADAS);
 
-    const peliculasPopulares = useFetch(URL_PELICULAS_POPULARES)
+  return (
+    <Grid container direction="column">
+      <Grid item>
+        <Carusel></Carusel>
+      </Grid>
 
-    const peliculasPuntuadas = useFetch(URL_PELICULAS_PUNTUADAS)
-
-    return(
-
+      <Grid itema container direction="row">
+          <Grid item>
+              <ListaPeliculas
+          peliculas={peliculasPopulares}
+          titulo="Peliculas Populares"
+        />
+          </Grid>
         
-        <div>
-            <Carusel>      
-            </Carusel>
-
-            {/* <PeliculasSection 
-        peliculas={peliculasLanzamiento}
-        titulo="Ultimos Lanzamientos carusel" 
-        /> */}
-       
-        <PeliculasSection 
-        peliculas={peliculasPopulares}
-        titulo ="Peliculas Populares lista"
+        <Grid item>
+            <ListaPeliculas
+          peliculas={peliculasPuntuadas}
+          titulo="Peliculas mejor puntuadas "
         />
-
-       
-         <PeliculasSection  
-        peliculas = {peliculasPuntuadas}
-        titulo ="Peliculas puntuadas lista"
-        />
-
-
-        </div>
-    )
-}
+        </Grid>
+        
+      </Grid>
+    </Grid>
+  );
+};
 
 export default Home;

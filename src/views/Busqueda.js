@@ -4,7 +4,7 @@ import PeliculasSection from '../components/PeliculasSection'
 
 
 const Busqueda = () => {
-    const [valorDelInput, setValorDelInput] = useState('')
+    const [valorDelInput, setValorDelInput] = useState('') //UNdefined
     const [busqueda, setBusqueda] = useState('')
     const [peliculaBuscada, setPeliculaBuscada] = useState([])
 
@@ -28,6 +28,7 @@ const Busqueda = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setBusqueda(valorDelInput)
+        
     }
 
     return(
@@ -54,19 +55,8 @@ const Busqueda = () => {
 
 export default Busqueda;
 
-//fetch inicial a
-//https://api.themoviedb.org/3/search/movie?api_key=c7e318bc4679faa16a6f940e1435e019&languaje=es-ES&query=undefined&page=1
-//https://api.themoviedb.org/3/search/movie?api_key=c7e318bc4679faa16a6f940e1435e019&languaje=es-ES&query=${valorDelInput}&page=1
 
 
 
 
-//  <section>
-//             {peliculaBuscada && peliculaBuscada.map( pelicula=>
-//                 <div>
-//                     <img src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} />
-//                     <h2>{pelicula.original_title}</h2>
-//                 </div>
-//             )}
 
-//         </section>

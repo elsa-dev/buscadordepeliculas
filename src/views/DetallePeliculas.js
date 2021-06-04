@@ -25,7 +25,7 @@ const DetallePeliculas = () => {
 
   return (
     <>
-      <img src={`https://image.tmdb.org/t/p/w500${detalle.backdrop_path}`} />
+      <img src={`https://image.tmdb.org/t/p/w500/${detalle.backdrop_path}`} alt="poster pelicula" />
       <h1>{detalle.original_title}</h1>
       <div>{detalle.release_date}</div>
       <div>

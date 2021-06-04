@@ -21,7 +21,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 400,
+    width: '100%',
     flexGrow: 1,
   },
   header: {
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 255,
+    // height: auto,
     display: 'block',
-    maxWidth: 400,
+    width: '100%',
     overflow: 'hidden',
     width: '100%',
   },
@@ -42,12 +42,12 @@ const useStyles = makeStyles((theme) => ({
 
 function SwipeableTextMobileStepper() {
 
-    const tutorialSteps = useFetch(URL_PELICULAS_LANZAMIENTOS)
+    const peliculasSteps = useFetch(URL_PELICULAS_LANZAMIENTOS)
     
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tutorialSteps.length;
+  const maxSteps = peliculasSteps.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -72,13 +72,13 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {tutorialSteps.map((step, index) => (
+        {peliculasSteps.map((step, index) => (
           <div key={step.title}>
 
             {Math.abs(activeStep - index) <= 2 ? (
 
                 <>
-              <img className={classes.img} src={`https://image.tmdb.org/t/p/w500${step.backdrop_path}`} alt={step.title} />
+              <img className={classes.img} src={`https://image.tmdb.org/t/p/original${step.backdrop_path}`} alt={step.title} />
               <Typography>{step.title}</Typography>
               <h4>{step.overview}</h4>
               
