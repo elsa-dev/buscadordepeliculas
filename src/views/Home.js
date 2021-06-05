@@ -23,7 +23,7 @@ const Home = () => {
         <Carusel></Carusel>
       </Grid>
 
-      <Grid itema container direction="row">
+      <Grid item container direction="row">
           <Grid item>
               <ListaPeliculas
           peliculas={peliculasPopulares}
