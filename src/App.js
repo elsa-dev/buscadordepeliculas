@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
-import './App.css';
+
+
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { purple} from "@material-ui/core/colors"
 
 import Busqueda from './views/Busqueda'
 import DetallePeliculas from './views/DetallePeliculas'
@@ -12,9 +15,15 @@ import PeliculasPopulares from './views/PeliculasPopulares'
 import PeliculasPuntuadas from './views/PeliculasPuntuadas'
 
 
+const theme = createMuiTheme({
+    palette: {
+    primary: purple
+  }
+})
+
 const App = () => {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
 
         <Nav />
@@ -30,8 +39,9 @@ const App = () => {
         </Switch>    
 
         <Footer />
+
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 

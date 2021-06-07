@@ -1,42 +1,79 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+import React from "react";
 
-
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import Box from "@material-ui/core/Box";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 
 const useStyles = makeStyles({
-    root: {
-        // maxWidth: 300,
-    },
+  root: {
+    height: "500px",
+  },
+  imagen: {
+    height: "400px",
+    overflow: "hidden",
+  },
+  img: {
+    width: "100%",
+    // overflow: "hidden",
+  },
+  textCenter: {
+    textAlign: "center",
+  },
+  link: {
+    textDecoration: "none",
+  },
 });
 
-const Tarjeta = ({imagen,titulo}) => {
-    const classes = useStyles();
+// const useStyles = makeStyles((theme) => ({
+// //   root: {
+// //     width: "100%",
+// //     height: 400,
+// //     maxWidth: 300,
+// //     backgroundColor: theme.palette.background.paper,
+// //   },
+//   link: {
+//     textDecoration: "none",
+//   },
+//   textCenter: {
+//     textAlign: "center",
+//   },imagen:{
+//         width: "100%",
+//         overflow: 'hidden',
 
-    return(
-        <Card className={classes.root}
-        elevation={3}>
-            
-            <img src={`https://image.tmdb.org/t/p/w500/${imagen}`} />
-            <Typography>{titulo}</Typography>
-            <IconButton aria-label="add to favorites">
-          <VisibilityIcon />
-        </IconButton>
-                               
-        </Card>
-        
-        
-    )
-}
+//     },
+// }));
 
-export default Tarjeta
+const Tarjeta = ({ imagen, titulo }) => {
+  const classes = useStyles();
 
-{/* <Card className={classes.root}>
+  return (
+    <Card className={classes.root} elevation={3}>
+      <Box className={classes.imagen}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${imagen}`}
+          className={classes.img}
+        />
+      </Box>
+
+      <Typography className={classes.textCenter}>{titulo}</Typography>
+      <Box display="flex" justifyContent="center">
+      <IconButton aria-label="mira el detalle de la pelicula">
+        <VisibilityIcon />
+      </IconButton>
+      </Box>
+    </Card>
+  );
+};
+
+export default Tarjeta;
+
+{
+  /* <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -57,4 +94,5 @@ export default Tarjeta
                     Share
         </Button>
             </CardActions>
-        </Card> */}
+        </Card> */
+}

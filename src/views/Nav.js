@@ -16,6 +16,17 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  link:{
+    textDecoration: 'none'
+  },
+  titleOut: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    }}
+
+   
   
 }));
 
@@ -27,29 +38,32 @@ const Nav = () => {
     <AppBar position="static">
       <Toolbar>
            
-            <LocalMoviesIcon />
+            <LocalMoviesIcon 
+            fontSize="large"/>
           
-        <Link to="/">
-          <Button variant="contained" color="primary" disableElevation>
+        <Link to="/" className={classes.link}>
+          <Button 
+          
+          variant="contained" color="primary" disableElevation>
             Home
           </Button>
         </Link>
 
-        <Link to="/peliculas-lanzamientos">
-          <Button variant="contained" color="primary" disableElevation>
+        <Link to="/peliculas-lanzamientos" className={classes.link}>
+          <Button variant="contained" color="primary" disableElevation className={classes.titleOut}>
             Ultimos Lanzamientos
           </Button>
         </Link>
 
-        <Link to="/peliculas-populares">
-          <Button variant="contained" color="primary" disableElevation>
+        <Link to="/peliculas-populares" className={classes.link}>
+          <Button variant="contained" color="primary" disableElevation className={classes.titleOut}>
             Populares
           </Button>
         </Link>
 
         
-        <Link to="/busqueda">
-          <Button variant="contained" color="primary" disableElevation>
+        <Link to="/busqueda" className={classes.link}>
+          <Button variant="contained" color="primary" disableElevation >
             Buscar
           </Button> 
         </Link>
@@ -59,3 +73,9 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+{/* <Menu>
+   <MenuItem component={Link} to={'/first'}>Team 1</MenuItem>
+   <MenuItem component={Link} to={'/second'}>Team 2</MenuItem>
+</Menu> */}

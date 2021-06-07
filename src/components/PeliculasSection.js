@@ -7,19 +7,30 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Tarjeta from '../components/Tarjeta'
 
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+    
+  link: {
+    textDecoration: "none",
+  },
+    textCenter: {
+        textAlign: "center",
+  }
+    
+});
 
 const PeliculasSection = ({peliculas, titulo}) => {
-    
+    const classes = useStyles();
     return (
         <Container>
-            <Typography>{titulo}</Typography>
+            <Typography variant="h5" className={classes.textCenter}>{titulo}</Typography>
             <Grid container spacing={2}>
                 { peliculas &&
                     peliculas.map( (pelicula) => (
                        <Grid item xs={12} sm={6} md={4} lg={3}
                        key={pelicula.title}>
-                           <Link  to={`/detalle/${pelicula.id}`}>
+                           <Link  to={`/detalle/${pelicula.id}`} className={classes.link} >
                                <Tarjeta
                                 titulo={pelicula.title}
                                 imagen={pelicula.poster_path}
