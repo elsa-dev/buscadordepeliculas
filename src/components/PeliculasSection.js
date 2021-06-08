@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     textCenter: {
         textAlign: "center",
   }
-    
+     
 });
 
 const PeliculasSection = ({peliculas, titulo}) => {

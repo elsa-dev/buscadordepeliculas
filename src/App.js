@@ -5,7 +5,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { purple} from "@material-ui/core/colors"
 
 import Busqueda from './views/Busqueda'
-import DetallePeliculas from './views/DetallePeliculas'
+import DetallePeliculas from './components/DetallePeliculas'
 import Footer from './views/Footer'
 import Home from './views/Home'
 import Nav from './views/Nav'

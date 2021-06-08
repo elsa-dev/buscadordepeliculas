@@ -66,6 +66,7 @@ const Tarjeta = ({ imagen, titulo }) => {
         <VisibilityIcon />
       </IconButton>
       </Box>
+
     </Card>
   );
 };
