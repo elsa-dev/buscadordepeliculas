@@ -7,11 +7,10 @@ import DetalleInfoTexto from "../views/DetalleInfoTexto";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +26,6 @@ const DetallePeliculas = () => {
   const classes = useStyles();
 
   const [detalle, setDetalle] = useState({});
-  // const [video, setVideo] = useState({});
 
   const params = useParams();
 
@@ -37,12 +35,7 @@ const DetallePeliculas = () => {
     )
       .then((res) => res.json())
       .then((data) => setDetalle(data));
-
-    // fetch(
-    //   `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
-    // )
-    //   .then((res) => res.json())
-    //   .then((data) => setVideo(data));
+    
   }, []);
 
   console.log(detalle);
@@ -61,12 +54,7 @@ const DetallePeliculas = () => {
         </Grid>
       </Container>
 
-      {/* <div>
-        {video.results &&
-          video.results.map((video) => (
-            <iframe src={`https://www.youtube.com/embed/${video.key}`} />
-          ))}
-      </div> */}
+      
     </>
   );
 };

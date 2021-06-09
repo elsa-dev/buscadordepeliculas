@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useFetch = (url) => {
+const useFetch = (url, page) => {
     const [peliculas, setPeliculas] = useState([])
     const [paginado, setPaginado] = useState([])
 
@@ -9,14 +9,17 @@ const useFetch = (url) => {
         .then (res => res.json())
         .then ( data => {
             setPeliculas(data.results)
-        setPaginado(data)})
+        setPaginado(data.total_pages)})
 
     }, [] )
     
     // console.log(peliculas)
     // console.log(paginado)
 
-    return peliculas
+    return {peliculas: peliculas,
+            paginado:paginado}
 }
 
 export default useFetch
+
+

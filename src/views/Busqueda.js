@@ -20,6 +20,7 @@ const Busqueda = () => {
 
   const handleChange = (e) => {
     setValorDelInput(e.target.value);
+    
   };
 
   console.log(busqueda);
@@ -34,13 +35,13 @@ const Busqueda = () => {
       <Box display="flex" justifyContent="center" bgcolor="background.paper" pt={2}>
         <form onSubmit={handleSubmit}>
           <label>
-            Busca tu Pelicula
+            Busca tu Pelicula : 
             <input value={valorDelInput} onChange={handleChange} />
           </label>
         </form>
       </Box>
 
-      <Box pt={2}>
+      <Box  pt={2}>
         <PeliculasSection peliculas={peliculaBuscada} />
       </Box>
     </>

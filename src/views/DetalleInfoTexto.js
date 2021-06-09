@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import Container from "@material-ui/core/Container";
+
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
+
 
 import Slide from "@material-ui/core/Slide";
 

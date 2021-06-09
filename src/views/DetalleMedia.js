@@ -21,7 +21,7 @@ const DetalleMedia = ({ detalle }) => {
       <Box pt={2}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${detalle.poster_path}`}
-          className={classes.img}
+          className={classes.img} alt="imagen poster pelicula"
         />
       </Box>
       
