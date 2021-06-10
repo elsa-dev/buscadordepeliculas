@@ -41,7 +41,7 @@ link: {
 }));
 
 function SwipeableTextMobileStepper() {
-  const peliculasSteps = useFetch(URL_PELICULAS_LANZAMIENTOS);
+  const {peliculas:peliculasSteps} = useFetch(URL_PELICULAS_LANZAMIENTOS);
 
   const classes = useStyles();
   const theme = useTheme();

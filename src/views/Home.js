@@ -12,30 +12,30 @@ import {
 } from "../utils/variables";
 
 const Home = () => {
-  const peliculasPopulares = useFetch(URL_PELICULAS_POPULARES);
+  const { peliculas:peliculasPopulares} = useFetch(URL_PELICULAS_POPULARES);
 
-  const peliculasPuntuadas = useFetch(URL_PELICULAS_PUNTUADAS);
+  const { peliculas:peliculasPuntuadas } = useFetch(URL_PELICULAS_PUNTUADAS);
 
   return (
     <Grid container direction="column">
-      {/* <Grid item>
+      <Grid item>
         <Carusel></Carusel>
-      </Grid> */}
+      </Grid>
 
      <Container >
         <Grid item container direction="row" spacing={2} >
           <Grid item xs={12} sm={6}>
-            {/* <ListaPeliculas
+            <ListaPeliculas
               peliculas={peliculasPopulares}
               titulo="Peliculas Populares"
-            /> */}
+            />
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            {/* <ListaPeliculas
+            <ListaPeliculas
               peliculas={peliculasPuntuadas}
               titulo="Peliculas mejor puntuadas "
-            /> */}
+            />
           </Grid>
         </Grid>
       </Container>

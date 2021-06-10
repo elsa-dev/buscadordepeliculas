@@ -11,15 +11,16 @@ const useFetch = (url, page) => {
             setPeliculas(data.results)
         setPaginado(data.total_pages)})
 
-    }, [] )
+    }, [page] )
     
-    // console.log(peliculas)
-    // console.log(paginado)
+    
 
     return {peliculas: peliculas,
             paginado:paginado}
 }
 
 export default useFetch
+
+// [page]
 
 
