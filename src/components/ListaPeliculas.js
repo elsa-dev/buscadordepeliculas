@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { FixedSizeList } from "react-window";
+
 
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -49,7 +49,7 @@ function ListaPeliculas({ peliculas, titulo, style }) {
       <List>
         {peliculas &&
           peliculas.map((pelicula) => (
-            <ListItem button style={style} key={pelicula.title}>
+            <ListItem button style={style} key={pelicula.id}>
 
               <ListItemAvatar>
                 <Avatar

@@ -1,6 +1,6 @@
 import PeliculasSection from "../components/PeliculasSection";
 import useFetch from "../hooks/useFetch";
-import { URL_PELICULAS_POPULARES } from "../utils/variables";
+
 
 import { useState, useEffect } from 'react'
 
@@ -20,26 +20,33 @@ const useStyles = makeStyles((theme) => ({
 const PeliculasPopulares = () => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
-    const [peliculas, setPeliculas] = useState([])
-    const [paginado, setPaginado] = useState([])
+    // const [peliculas, setPeliculas] = useState([])
+    // const [paginado, setPaginado] = useState([])
     
-
-  useEffect(() => {
-    fetch(
+    const { peliculas, paginado } = useFetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES&page=${page}`
     )
-      .then((res) => res.json())
-      .then((data) =>{
-        setPeliculas(data.results)
-        setPaginado(data.total_pages)})
 
-  }, [ page]);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://api.themoviedb.org/3/movie/popular?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES&page=${page}`
+      
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) =>{
+  //       setPeliculas(data.results)
+  //       setPaginado(data.total_pages)})
 
-  console.log(page);
+  // }, [ page]);
+
+  // console.log(page);
 
     const handleChange = (event, value) => {
     setPage(value);
   };
+
+  console.log(page);
+  console.log(paginado);
 
   return (
     <>

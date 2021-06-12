@@ -1,7 +1,8 @@
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
@@ -35,17 +36,19 @@ const DetalleInfoTexto = ({ detalle }) => {
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
-  const [video, setVideo] = useState({});
+  // const [video, setVideo] = useState({});
 
   const params = useParams();
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
-    )
-      .then((res) => res.json())
-      .then((data) => setVideo(data));
-  }, []);
+  const  {video } = useFetch( `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`)
+
+  // useEffect(() => {
+  //   fetch(
+  //     `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setVideo(data));
+  // }, []);
 
   const handleClickOpen = () => {
     setOpen(true);

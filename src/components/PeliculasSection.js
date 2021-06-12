@@ -29,7 +29,7 @@ const PeliculasSection = ({peliculas, titulo}) => {
                 { peliculas &&
                     peliculas.map( (pelicula) => (
                        <Grid item xs={12} sm={6} md={4} lg={3}
-                       key={pelicula.title}>
+                       key={pelicula.id}>
                            <Link  to={`/detalle/${pelicula.id}`} className={classes.link} >
                                <Tarjeta
                                 titulo={pelicula.title}
@@ -56,21 +56,4 @@ export default PeliculasSection
 
 
 
-//   { peliculas &&
-//                     peliculas.map( (pelicula) => (
-//                         <>
-                        
-//                         <Link to={`/detalle/${pelicula.id}`}>
-                            
-//                             <Card item key={pelicula.title}>
-//                                 <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} />
-//                                 <h3>{pelicula.title}
-//                                     </h3>
-//                             </Card>
-//                         </Link>
-                        
-//                         </>
-//                     )
-//                     )
-//                 }
 

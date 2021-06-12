@@ -40,7 +40,7 @@ link: {
 }
 }));
 
-function SwipeableTextMobileStepper() {
+function Carusel() {
   const {peliculas:peliculasSteps} = useFetch(URL_PELICULAS_LANZAMIENTOS);
 
   const classes = useStyles();
@@ -69,7 +69,7 @@ function SwipeableTextMobileStepper() {
         enableMouseEvents
       >
         {peliculasSteps.map((step, index) => (
-          <div key={step.title}>
+          <div key={step.id}>
             {Math.abs(activeStep - index) <= 2 ? (
               <>
                 <img
@@ -139,4 +139,4 @@ function SwipeableTextMobileStepper() {
   );
 }
 
-export default SwipeableTextMobileStepper;
+export default Carusel;

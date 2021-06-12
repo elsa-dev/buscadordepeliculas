@@ -2,7 +2,7 @@ import React from "react";
 
 import PeliculasSection from "../components/PeliculasSection";
 import useFetch from "../hooks/useFetch";
-import { URL_PELICULAS_LANZAMIENTOS } from "../utils/variables";
+
 
 import { useState, useEffect } from "react";
 
@@ -25,6 +25,8 @@ const PeliculasLanzamientos = () => {
   const [page, setPage] = useState(1);
   const [peliculas, setPeliculas] = useState([]);
   const [paginado, setPaginado] = useState([]);
+
+  // const { peliculas, paginado } = useFetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES&page=${page}`)
 
   useEffect(() => {
     fetch(

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 import DetalleHeader from "../views/DetalleHeader";
 import DetalleMedia from "../views/DetalleMedia";
@@ -25,20 +25,23 @@ const useStyles = makeStyles((theme) => ({
 const DetallePeliculas = () => {
   const classes = useStyles();
 
-  const [detalle, setDetalle] = useState({});
+  // const [detalle, setDetalle] = useState({});
 
   const params = useParams();
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
-    )
-      .then((res) => res.json())
-      .then((data) => setDetalle(data));
-    
-  }, []);
+  const {detalle} = useFetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`)
 
-  console.log(detalle);
+
+  // useEffect(() => {
+  //   fetch(
+  //     `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setDetalle(data));
+    
+  // }, []);
+
+  // console.log(detalle);
 
   return (
     <>

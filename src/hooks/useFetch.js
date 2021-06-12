@@ -1,26 +1,30 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 const useFetch = (url, page) => {
-    const [peliculas, setPeliculas] = useState([])
-    const [paginado, setPaginado] = useState([])
+  const [peliculas, setPeliculas] = useState([]);
+  const [paginado, setPaginado] = useState();
+  const [detalle, setDetalle] = useState({});
+  const [video, setVideo] = useState({});
 
-    useEffect( () => {
-        fetch(url)
-        .then (res => res.json())
-        .then ( data => {
-            setPeliculas(data.results)
-        setPaginado(data.total_pages)})
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setPeliculas(data.results);
+        setPaginado(data.total_pages);
+        setDetalle(data);
+        setVideo(data);
+        console.log(paginado)
+        console.log(detalle)
+      });
+  }, [page]);
 
-    }, [page] )
-    
-    
+  return {
+    peliculas: peliculas,
+    paginado: paginado,
+    detalle: detalle,
+    video: video,
+  };
+};
 
-    return {peliculas: peliculas,
-            paginado:paginado}
-}
-
-export default useFetch
-
-// [page]
-
-
+export default useFetch;
