@@ -19,7 +19,7 @@ const Busqueda = () => {
 
   const classes = useStyles();
 
-  const [valorDelInput, setValorDelInput] = useState(""); //UNdefined
+  const [valorDelInput, setValorDelInput] = useState("undefined"); //UNdefined
   const [busqueda, setBusqueda] = useState("");
   const [peliculaBuscada, setPeliculaBuscada] = useState([]);
   const [page, setPage] = useState(1);
@@ -27,7 +27,7 @@ const Busqueda = () => {
 
  useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=c7e318bc4679faa16a6f940e1435e019&languaje=es-ES&query=${valorDelInput}&page=${page}`
+      `https://api.themoviedb.org/3/search/movie?api_key=c7e318bc4679faa16a6f940e1435e019&language=es-ES&query=${valorDelInput}&page=${page}`
     )
       .then((res) => res.json())
       .then((data) =>{

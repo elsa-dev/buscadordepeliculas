@@ -31,7 +31,7 @@ const DetallePeliculas = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&languaje=es-ES`
+      `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
     )
       .then((res) => res.json())
       .then((data) => setDetalle(data));
