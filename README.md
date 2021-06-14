@@ -1,33 +1,26 @@
-# Getting Started with Create React App
+# Proyecto final bootcamp ADA 5ta online.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto consiste en un buscador de peliculas
 
-## Available Scripts
+## `Api utilizada`
 
-In the project directory, you can run:
+OMDb API, The Open Movie Database
 
-### `npm start`
+### `Tegnologias utilizadas`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para el estilado se utilizo Material ui, es mi primer proyecto React.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `Sitio deployado`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta alojado en netlify
+[Buscador de peliculas](https://buscadordepeliculasada.netlify.app/) 
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[settings](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
