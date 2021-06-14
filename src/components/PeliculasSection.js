@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
-
+import Box from '@material-ui/core/Box';
 
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -24,7 +24,10 @@ const PeliculasSection = ({peliculas, titulo}) => {
     const classes = useStyles();
     return (
         <Container>
-            <Typography variant="h5" className={classes.textCenter}>{titulo}</Typography>
+            <Box py={4}>
+               <Typography variant="h6" y={6} className={classes.textCenter}>{titulo}</Typography> 
+            </Box>
+            
             <Grid container spacing={2}>
                 { peliculas &&
                     peliculas.map( (pelicula) => (

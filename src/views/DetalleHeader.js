@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,20 +15,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DetalleHeader = ({detalle}) => {
-    const classes = useStyles();
-    return(
-        <>
-            <Box display="flex" justifyContent="center" bgcolor="background.paper">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${detalle.backdrop_path}`}
-          alt="poster pelicula"
-          className={classes.img}
-        />
+const DetalleHeader = ({ detalle }) => {
+  const classes = useStyles();
+  return (
+    <>
+      <Box
+        display="flex"
+        justifyContent="center"
+        bgcolor="#303030"
+        color="primary.contrastText"
+      >
+        {detalle ? (
+          <img
+            src={`https://image.tmdb.org/t/p/original/${detalle}`}
+            alt="poster pelicula"
+            className={classes.img}
+          />
+        ) : (
+          ""
+        )}
       </Box>
+    </>
+  );
+};
 
-        </>
-    )
-}
-
-export default DetalleHeader
+export default DetalleHeader;

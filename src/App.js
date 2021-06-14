@@ -25,7 +25,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-
+    
         <Nav />
 
        <Switch>

@@ -29,7 +29,7 @@ const Footer = () => {
         alignItems="center"
         bgcolor="primary.main"
         color="primary.contrastText"
-        p={2}
+        p={1}
       >
         <Toolbar>
           <Link to="/peliculas-lanzamientos" className={classes.link}>
@@ -40,7 +40,7 @@ const Footer = () => {
             </Hidden>
           </Link>
 
-          <Box px={2}>
+          <Box textAlign="center">
             <Typography>
               MOVIE APP
             </Typography>

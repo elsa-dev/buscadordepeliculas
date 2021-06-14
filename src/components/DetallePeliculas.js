@@ -3,14 +3,12 @@ import useFetch from "../hooks/useFetch";
 
 import DetalleHeader from "../views/DetalleHeader";
 import DetalleMedia from "../views/DetalleMedia";
-import DetalleInfoTexto from "../views/DetalleInfoTexto";
+import DetalleInfo from "../views/DetalleInfo";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,39 +23,25 @@ const useStyles = makeStyles((theme) => ({
 const DetallePeliculas = () => {
   const classes = useStyles();
 
-  // const [detalle, setDetalle] = useState({});
-
   const params = useParams();
 
-  const {detalle} = useFetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`)
-
-
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => setDetalle(data));
-    
-  // }, []);
-
-  // console.log(detalle);
-
+  const { detalle } = useFetch(
+    `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
+  );
+ console.log(detalle)
   return (
     <>
-      <DetalleHeader detalle={detalle} />
+      <DetalleHeader detalle={detalle.backdrop_path} />
       <Container>
         <Grid container direction="row" spacing={2}>
           <Grid item xs={12} sm={6}>
-            <DetalleMedia detalle={detalle} />
+            <DetalleMedia detalle={detalle.poster_path} />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <DetalleInfoTexto detalle={detalle} />
+            <DetalleInfo detalle={detalle} />
           </Grid>
         </Grid>
       </Container>
-
-      
     </>
   );
 };

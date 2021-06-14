@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url, page) => {
   const [peliculas, setPeliculas] = useState([]);
-  const [paginado, setPaginado] = useState();
+  const [paginado, setPaginado] = useState([]);
   const [detalle, setDetalle] = useState({});
   const [video, setVideo] = useState({});
 
