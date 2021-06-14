@@ -28,7 +28,7 @@ const DetallePeliculas = () => {
   const { detalle } = useFetch(
     `https://api.themoviedb.org/3/movie/${params.id}?api_key=a12832899a108764636dd1cf66bbae2d&language=es-ES`
   );
- console.log(detalle)
+ 
   return (
     <>
       <DetalleHeader detalle={detalle.backdrop_path} />

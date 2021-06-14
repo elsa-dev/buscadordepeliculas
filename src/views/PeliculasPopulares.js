@@ -29,8 +29,7 @@ const PeliculasPopulares = () => {
     setPage(value);
   };
 
-  console.log(page);
-  console.log(paginado);
+  
 
   return (
     <>

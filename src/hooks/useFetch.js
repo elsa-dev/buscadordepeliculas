@@ -14,8 +14,7 @@ const useFetch = (url, page) => {
         setPaginado(data.total_pages);
         setDetalle(data);
         setVideo(data);
-        console.log(paginado)
-        console.log(detalle)
+        
       });
   }, [page]);
 

@@ -32,8 +32,7 @@ const PeliculasLanzamientos = () => {
   const handleChange = (event, value) => {
     setPage(value);
   };
-  console.log(page);
-  console.log(paginado);
+  
 
   return (
     <>

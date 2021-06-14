@@ -43,7 +43,7 @@ const Busqueda = () => {
     setPage(value);
   };
 
-  console.log(busqueda);
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
