@@ -15,6 +15,9 @@ Para el estilado se utilizo Material ui, es mi primer proyecto React.
 Esta alojado en netlify
 [Buscador de peliculas](https://buscadordepeliculasada.netlify.app/) 
 
+![buscador de peliculas](https://user-images.githubusercontent.com/62554790/122148837-7feeae00-ce31-11eb-9242-2e11141e8401.png)
+
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
